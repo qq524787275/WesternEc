@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="bg_all">#f5f5f5</color>
+    <color name="bg_selector">#B4f5f6f8</color>
+
+    <color name="translucent">#00000000</color>
+
+    <color name="black_222">#222222</color>
+
+    <color name="green_27b443">#27B443</color>
+    <color name="green_43bd22">#43BD22</color>
+
+    <color name="bule_0c7fcd">#0C7DCD</color>
+
+    <color name="red">#FF0000</color>
+    <!-- 使用于突出标注的文字 按钮点击效果 -->
+    <color name="red_f7443e">#EF3030</color>
+    
+    <color name="red_ff5354">#FF5354</color>
+    <!-- 用于按钮颜色 -->
+    <color name="red_ef3030">#EF3030</color>
+    <!-- 浅黄色 -->
+    <color name="orange_light">#FFFCED</color>
+
+    <!-- 使用于重要的文字内容标题，内容标题等 -->
+    <color name="black">#000000</color>
+    <!-- 使用于副标题或者较重要的文字 -->
+    <color name="black_333">#333333</color>
+
+
+    <color name="white">#FFF</color>
+
+    <!-- 使用广泛 	多用于大篇幅内容文字等 -->
+    <color name="grey_666">#666666</color>
+    <color name="grey_ed">#EDEDED</color>
+    <!-- 次级	多用于提示性文字文字等 -->
+    <color name="grey_96">#969696</color>
+    <color name="grey_ccc">#cccccc</color>
+    <color name="grey_3d">#3d3d3d</color>
+    <color name="grey_bbb">#bbbbbb</color>
+
+    <!-- 列表下划线 -->
+    <color name="list_line">#DDDDDD</color>
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.kennyc.view.MultiStateView
+        android:id="@+id/home_stateview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msv_animateViewChanges="true"
+        app:msv_loadingView="@layout/stateview_loading"
+        app:msv_viewState="content">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartrefreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlHeaderHeight="180px"
+            app:srlReboundDuration="1000">
+
+            <com.wethis.module_base.widget.classics.CustomHeader
+                android:layout_width="match_parent"
+                android:layout_height="180px"
+                app:srlDrawableArrowSize="50px"
+                app:srlDrawableSize="70px"
+                app:srlEnableLastTime="false"
+                app:srlTextSizeTitle="60px"></com.wethis.module_base.widget.classics.CustomHeader>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/home_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:scrollbarSize="3dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbarThumbVertical="@drawable/recycler_scrollbar"
+                android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </com.kennyc.view.MultiStateView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="24dp"
+        android:src="@mipmap/home_totop"
+        app:backgroundTint="@color/white"
+        app:fabSize="mini" />
+</RelativeLayout>

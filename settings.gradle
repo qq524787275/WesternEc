@@ -1,0 +1,1 @@
+include ':app', ':module-base', ':module-home', ':module-main', ':module-splash', ':module-login', ':module-search', ':module-mine', ':module-shopcar', ':module-shopclass'

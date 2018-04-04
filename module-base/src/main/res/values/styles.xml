@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- 配置Android提供的theme -->
+        <item name="android:textAppearanceListItemSmall">@style/QDTextAppearanceListItemSmall</item>
+        <item name="android:textAppearanceListItem">@style/QDtextAppearanceListItem</item>
+        <item name="android:listPreferredItemHeight">?attr/qmui_list_item_height_higher</item>
+        <item name="android:listPreferredItemHeightSmall">?attr/qmui_list_item_height</item>
+        <!--在无需多点触控的页面上，建议关闭多点触控-->
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+
+
+        <!-- 配置qmui提供的theme -->
+        <item name="qmui_config_color_blue">@color/black</item>
+        <item name="qmui_topbar_title_color">@color/qmui_config_color_white</item>
+        <item name="qmui_topbar_subtitle_color">@color/qmui_config_color_white</item>
+        <item name="qmui_topbar_text_btn_color_state_list">@color/qmui_config_color_blue</item>
+        <item name="qmui_topbar_height">48dp</item>
+        <item name="qmui_topbar_image_btn_height">48dp</item>
+        <item name="qmui_round_btn_bg_color">@color/qmui_config_color_blue</item>
+        <item name="qmui_round_btn_border_color">@color/qmui_config_color_blue</item>
+        <item name="qmui_round_btn_text_color">@color/qmui_config_color_blue</item>
+        <item name="qmui_content_spacing_horizontal">20dp</item>
+        <item name="qmui_content_padding_horizontal">@dimen/qmui_content_spacing_horizontal</item>
+        <item name="QMUITopBarStyle">@style/QDTopBar</item>
+
+        <!-- 配置app自己的theme -->
+        <item name="app_primary_color">?attr/qmui_config_color_blue</item>
+        <item name="app_content_bg_color">@color/qmui_config_color_white</item>
+
+    </style>
+    <style name="QDtextAppearanceListItem">
+        <item name="android:textColor">?attr/qmui_config_color_black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">?attr/qmui_s_list_item_bg_with_border_bottom_inset_left
+        </item>
+    </style>
+
+    <style name="QDTextAppearanceListItemSmall">
+        <item name="android:textColor">?attr/qmui_config_color_gray_4</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">?attr/qmui_s_list_item_bg_with_border_bottom_inset_left
+        </item>
+    </style>
+    <style name="QDTopBar" parent="QMUI.TopBar">
+        <item name="qmui_topbar_bg_color">?attr/app_primary_color</item>
+    </style>
+
+
+    <style name="DefaultAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/exit_anim</item>
+    </style>
+    <style name="WindowAlphaAnimation">
+        <item name="android:windowEnterAnimation">@anim/enter_alpha_anim</item>
+        <item name="android:windowExitAnimation">@anim/exit_alpha_anim</item>
+    </style>
+
+    <style name="NiceDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <!--去掉边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--悬浮-->
+        <item name="android:windowIsFloating">true</item>
+        <!--半透明-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--不需要标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--允许模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--全屏幕-->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="SpinKitView">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:minWidth">48dip</item>
+        <item name="android:maxWidth">48dip</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:maxHeight">48dip</item>
+    </style>
+
+</resources>

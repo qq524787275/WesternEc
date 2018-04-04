@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="300px">
+
+        <com.wethis.library.widget.progressing.SpinKitView
+            android:id="@+id/spinktview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:maxHeight="144px"
+            android:maxWidth="144px"
+            android:padding="10px"
+            android:minHeight="144px"
+            android:minWidth="144px" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinktview"
+            android:layout_centerHorizontal="true"
+            android:textSize="30px"
+            android:layout_marginTop="15px"
+            android:textColor="@color/qmui_config_color_blue"
+            android:text="加载中..."/>
+    </RelativeLayout>
+</LinearLayout>

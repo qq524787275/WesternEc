@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WesternEc.iml" filepath="$PROJECT_DIR$/WesternEc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-base/module-base.iml" filepath="$PROJECT_DIR$/module-base/module-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-home/module-home.iml" filepath="$PROJECT_DIR$/module-home/module-home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-login/module-login.iml" filepath="$PROJECT_DIR$/module-login/module-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-main/module-main.iml" filepath="$PROJECT_DIR$/module-main/module-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-mine/module-mine.iml" filepath="$PROJECT_DIR$/module-mine/module-mine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-search/module-search.iml" filepath="$PROJECT_DIR$/module-search/module-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-shopcar/module-shopcar.iml" filepath="$PROJECT_DIR$/module-shopcar/module-shopcar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-shopclass/module-shopclass.iml" filepath="$PROJECT_DIR$/module-shopclass/module-shopclass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-splash/module-splash.iml" filepath="$PROJECT_DIR$/module-splash/module-splash.iml" />
+    </modules>
+  </component>
+</project>
