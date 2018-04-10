@@ -4,11 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <Button
-        android:id="@+id/btn"
+    <com.wethis.module_base.widget.view.SearchBar
+        android:id="@+id/searchbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="登录"
-        android:gravity="center"/>
+        android:layout_height="wrap_content"></com.wethis.module_base.widget.view.SearchBar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/list_line" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/category_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/shopclass_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"></android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="20px"
+                android:layout_height="match_parent"
+                android:background="@color/bg_all" />
+
+            <FrameLayout
+                android:id="@+id/shopclass_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3.9"></FrameLayout>
+
+            <TextView
+                android:layout_width="20px"
+                android:layout_height="match_parent"
+                android:background="@color/bg_all" />
+        </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

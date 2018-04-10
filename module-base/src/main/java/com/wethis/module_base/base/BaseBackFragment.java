@@ -1,7 +1,6 @@
 package com.wethis.module_base.base;
 
-import android.widget.Toast;
-
+import com.sdsmdg.tastytoast.TastyToast;
 import com.wethis.module_base.R;
 
 
@@ -25,7 +24,7 @@ public abstract class BaseBackFragment extends BaseFragment {
             _mActivity.finish();
         } else {
             TOUCH_TIME = System.currentTimeMillis();
-            Toast.makeText(_mActivity, R.string.press_again_exit, Toast.LENGTH_SHORT).show();
+            TastyToast.makeText(_mActivity.getApplicationContext(),getResources().getString(R.string.press_again_exit),TastyToast.LENGTH_SHORT,TastyToast.WARNING);
         }
         return true;
     }

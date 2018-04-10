@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="220px">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/list_line"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/item_shop_store_return"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="20px"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/base_return_right"/>
+
+    <ImageView
+        android:id="@+id/item_shop_store_image"
+        android:layout_width="160px"
+        android:layout_height="160px"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="30px"/>
+    <TextView
+        android:id="@+id/item_shop_store_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30px"
+        android:layout_marginTop="30px"
+        android:layout_toLeftOf="@+id/item_shop_store_return"
+        android:layout_toRightOf="@+id/item_shop_store_image"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="shop_store_title shop_store_title shop_store_title "/>
+
+    <TextView
+        android:id="@+id/item_shop_store_parameter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_shop_store_title"
+        android:layout_toRightOf="@+id/item_shop_store_image"
+        android:layout_marginTop="30px"
+        android:layout_toLeftOf="@+id/item_shop_store_return"
+        android:textSize="30px"
+        android:text="parameter parameter parameter parameter parameter "
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/grey_666"/>
+    <com.wethis.module_base.widget.RatingBar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:starCount="5"
+        app:starEmpty="@mipmap/collect_normal"
+        app:starFill="@mipmap/collect_select"
+        app:starHalf="@mipmap/collect_select"
+        app:starImageSize="28px"
+        app:starPadding="10px"
+        app:starStep="1.5"
+        android:layout_below="@+id/item_shop_store_parameter"
+        android:layout_toRightOf="@id/item_shop_store_image"
+        app:stepSize="0"
+        app:clickable="false"
+        android:layout_marginTop="30px"
+        ></com.wethis.module_base.widget.RatingBar>
+
+</RelativeLayout>
+</LinearLayout>

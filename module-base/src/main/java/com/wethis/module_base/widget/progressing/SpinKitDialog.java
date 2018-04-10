@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.wethis.module_base.R;
@@ -20,14 +21,16 @@ public class SpinKitDialog {
 
     private QMUIDialog mDialog;
     private SpinKitView mKitView;
-
-    private SpinKitDialog(Context context,Style style,int color) {
+    private TextView mTextView;
+    private SpinKitDialog(Context context,Style style,int color,int textColor) {
         mDialog = new QMUIDialog
                 .CustomDialogBuilder(context)
                 .setLayout(R.layout.dialog_spinkit)
                 .create();
 
         mKitView=mDialog.findViewById(R.id.spinktview);
+        mTextView=mDialog.findViewById(R.id.textview);
+
         LinearLayout layout= mDialog.findViewById(R.id.dialog);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) layout.getLayoutParams();
         layoutParams.width= DensityUtils.getScreenW(context)/3;
@@ -35,7 +38,7 @@ public class SpinKitDialog {
         layoutParams.gravity= Gravity.CENTER_HORIZONTAL;
         layout.setLayoutParams(layoutParams);
 
-
+        mTextView.setTextColor(textColor);
 
         mKitView.setColor(color);
         mKitView.setIndeterminateDrawable(SpriteFactory.create(style));
@@ -47,6 +50,7 @@ public class SpinKitDialog {
     public static class Builder {
         private Context mContext;
         private int mColor;
+        private int mTextColor;
         private Style mStyle;
 
         public Builder(Context context) {
@@ -63,8 +67,13 @@ public class SpinKitDialog {
             return this;
         }
 
+        public Builder setTextColor(int color){
+            mTextColor=color;
+            return this;
+        }
+
         public SpinKitDialog builder() {
-            return new SpinKitDialog(mContext,mStyle,mColor);
+            return new SpinKitDialog(mContext,mStyle,mColor,mTextColor);
         }
     }
 

@@ -43,5 +43,4 @@ dependencies {
     if(!isDebugMainModule.toBoolean()){
         implementation project(':module-main')
     }
-
 }

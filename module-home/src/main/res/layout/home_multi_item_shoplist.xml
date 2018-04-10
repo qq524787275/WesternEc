@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/bg_all"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/multi_item_shoplist_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80px">
+        <TextView
+            android:id="@+id/multi_item_shoplist_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30px"
+            android:layout_marginLeft="30px"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black_222"
+            android:text="Title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看更多"
+            android:textSize="24px"
+            android:textColor="@color/grey_666"
+            android:gravity="center"
+            android:drawablePadding="10px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20px"
+            android:drawableRight="@mipmap/base_return_right"/>
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/multi_item_shoplist_avd_image"
+        android:layout_width="match_parent"
+        android:layout_height="180px"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:scaleType="fitXY"
+        android:background="@mipmap/img_two_bi_one"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/white"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/multi_item_shoplist_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        ></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

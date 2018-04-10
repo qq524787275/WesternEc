@@ -6,8 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.ContentFrameLayout;
 import android.view.MotionEvent;
 
+import com.bumptech.glide.Glide;
 import com.wethis.module_base.R;
-import com.zhy.autolayout.AutoLayoutActivity;
+import com.wethis.module_base.widget.autolayout.AutoLayoutActivity;
 
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
@@ -184,8 +185,14 @@ public abstract class BaseActivity extends AutoLayoutActivity implements ISuppor
         return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
     }
 
-    @Override
-    public void post(Runnable runnable) {
-        mDelegate.post(runnable);
+//    @Override
+//    public void post(Runnable runnable) {
+//        mDelegate.post(runnable);
+//    }
+
+
+    public void replaceFragment(ISupportFragment toFragment, boolean addToBackStack) {
+        mDelegate.replaceFragment(toFragment, addToBackStack);
     }
+
 }

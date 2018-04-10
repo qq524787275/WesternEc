@@ -3,23 +3,27 @@ package com.wethis.module_home;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.kennyc.view.MultiStateView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
-import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.sdsmdg.tastytoast.TastyToast;
+import com.wethis.module_base.App;
 import com.wethis.module_base.Constants;
 import com.wethis.module_base.base.BaseFragment;
 import com.wethis.module_base.callback.BaseResponse;
 import com.wethis.module_base.callback.JsonCallback;
+import com.wethis.module_base.widget.progressing.SpinKitDialog;
+import com.wethis.module_base.widget.progressing.Style;
+import com.wethis.module_home.adapter.HomeAdapter;
 import com.wethis.module_home.bean.IndexBean;
 
 import java.util.ArrayList;
@@ -42,8 +46,8 @@ public class HomeFragment extends BaseFragment {
     FloatingActionButton mFab;
     @BindView(R2.id.home_stateview)
     MultiStateView mStateView;
-//    private HomeAdapter adapter;
-    private QMUITipDialog loadingDialog;
+    private HomeAdapter adapter;
+    private SpinKitDialog mLoadingDialg;
     private LinearLayoutManager linearLayoutManager;
     public static HomeFragment newInstance() {
         
@@ -60,7 +64,11 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-
+        mLoadingDialg = new SpinKitDialog.Builder(_mActivity)
+                .setColor(ContextCompat.getColor(_mActivity,R.color.red_ff5354))
+                .setStyle(Style.CUBE_GRID)
+                .setTextColor(ContextCompat.getColor(_mActivity,R.color.red_ff5354))
+                .builder();
     }
 
     @Override
@@ -98,8 +106,8 @@ public class HomeFragment extends BaseFragment {
         super.initView(view);
         linearLayoutManager = new LinearLayoutManager(_mActivity);
         homeRv.setLayoutManager(linearLayoutManager);
-//        adapter = new HomeAdapter(this);
-//        homeRv.setAdapter(adapter);
+        adapter = new HomeAdapter(this);
+        homeRv.setAdapter(adapter);
     }
 
     @Override
@@ -109,6 +117,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void index() {
+        mLoadingDialg.show();
         OkGo.<BaseResponse<IndexBean>>post(Constants.URL_INDEX)
                 .tag(this)
                 .execute(new JsonCallback<BaseResponse<IndexBean>>() {
@@ -125,28 +134,26 @@ public class HomeFragment extends BaseFragment {
                                 list.add(block_list.get(i));
                             }
                         }
-//                        adapter.setNewData(list);
-                        TastyToast.makeText(_mActivity.getApplicationContext(),"刷新成功~",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+                        adapter.setNewData(list);
                         mStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
                     }
 
                     @Override
                     public void onError(Response<BaseResponse<IndexBean>> response) {
                         super.onError(response);
-                        TastyToast.makeText(_mActivity.getApplicationContext(),"刷新失败~",TastyToast.LENGTH_SHORT,TastyToast.ERROR);
                     }
 
                     @Override
                     public void onFinish() {
                         super.onFinish();
+                        mLoadingDialg.dismiss();
                         smartRefreshLayout.finishRefresh();
                     }
                 });
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        OkGo.getInstance().cancelTag(this);
+    public void setThemeColor(int colorPrimary){
+        if(smartRefreshLayout!=null)
+        smartRefreshLayout.setPrimaryColors(colorPrimary, ContextCompat.getColor(_mActivity,R.color.white));
     }
 }

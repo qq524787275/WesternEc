@@ -3,6 +3,7 @@ if (isDebugSearchModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 27
 
@@ -44,6 +45,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     implementation project(':module-base')
     if (isDebugSearchModule.toBoolean()) {
         implementation 'com.android.support:appcompat-v7:27.0.2'

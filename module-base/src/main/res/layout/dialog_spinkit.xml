@@ -10,7 +10,7 @@
         android:gravity="center"
         android:layout_height="300px">
 
-        <com.wethis.library.widget.progressing.SpinKitView
+        <com.wethis.module_base.widget.progressing.SpinKitView
             android:id="@+id/spinktview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,6 +21,7 @@
             android:minHeight="144px"
             android:minWidth="144px" />
         <TextView
+            android:id="@+id/textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinktview"

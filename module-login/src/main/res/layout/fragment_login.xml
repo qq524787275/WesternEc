@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="登录"
-    android:gravity="center"/>
-</android.support.constraint.ConstraintLayout>
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="登录" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="180px"
+        android:layout_height="180px"
+        android:src="@mipmap/ic_launcher"
+        android:transitionName="share"
+       />
+</LinearLayout>

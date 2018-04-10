@@ -7,23 +7,23 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.FragmentationMagician;
+import android.support.v4.app.FragmentationHack;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+
+import com.wethis.module_base.R;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.ExtraTransaction;
-import me.yokeyword.fragmentation.Fragmentation;
 import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragmentDelegate;
 import me.yokeyword.fragmentation.SupportHelper;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
-import me.yokeyword.fragmentation.exception.AfterSaveStateTransactionWarning;
 
 /**
  * Created by Zzc on 2017/11/17/017.
@@ -455,21 +455,55 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment{
 
     }
 
-    @Override
-    public void post(Runnable runnable) {
-        mDelegate.post(runnable);
-    }
+//    @Override
+//    public void post(Runnable runnable) {
+//        mDelegate.post(runnable);
+//    }
 
 
-    public void showHideAnimaFragment(BaseFragment showFragment, BaseFragment hideFragment, FragmentManager fm) {
+//    public void showHideAnimaFragment(BaseFragment showFragment, BaseFragment hideFragment, FragmentManager fm) {
+//        if (showFragment == hideFragment) return;
+//
+//        FragmentTransaction ft = fm.beginTransaction()
+//                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+//                .show((Fragment) showFragment);
+//
+//        if (hideFragment == null) {
+//            List<Fragment> fragmentList = FragmentationMagician.getActiveFragments(fm);
+//            if (fragmentList != null) {
+//                for (Fragment fragment : fragmentList) {
+//                    if (fragment != null && fragment != showFragment) {
+//                        ft.hide(fragment);
+//                    }
+//                }
+//            }
+//        } else {
+//            ft.hide((Fragment) hideFragment);
+//        }
+//        boolean stateSaved = FragmentationMagician.isStateSaved(fm);
+//        if (stateSaved) {
+//            AfterSaveStateTransactionWarning e = new AfterSaveStateTransactionWarning("commit()");
+//            if (Fragmentation.getDefault().getHandler() != null) {
+//                Fragmentation.getDefault().getHandler().onException(e);
+//            }
+//        }
+//        ft.commitAllowingStateLoss();
+//    }
+
+
+    public void showHideAnimaFragment(BaseFragment showFragment, BaseFragment hideFragment, FragmentManager fragmentManager) {
+        if (fragmentManager == null) return;
         if (showFragment == hideFragment) return;
-
-        FragmentTransaction ft = fm.beginTransaction()
-                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+        FragmentTransaction ft = fragmentManager.beginTransaction()
+                .setCustomAnimations(
+                        R.anim.a_fragment_enter,
+                        R.anim.a_fragment_exit,
+                        R.anim.a_fragment_pop_enter,
+                        R.anim.a_fragment_pop_exit)
                 .show((Fragment) showFragment);
 
         if (hideFragment == null) {
-            List<Fragment> fragmentList = FragmentationMagician.getActiveFragments(fm);
+            List<Fragment> fragmentList = FragmentationHack.getActiveFragments(fragmentManager);
             if (fragmentList != null) {
                 for (Fragment fragment : fragmentList) {
                     if (fragment != null && fragment != showFragment) {
@@ -480,13 +514,6 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment{
         } else {
             ft.hide((Fragment) hideFragment);
         }
-        boolean stateSaved = FragmentationMagician.isStateSaved(fm);
-        if (stateSaved) {
-            AfterSaveStateTransactionWarning e = new AfterSaveStateTransactionWarning("commit()");
-            if (Fragmentation.getDefault().getHandler() != null) {
-                Fragmentation.getDefault().getHandler().onException(e);
-            }
-        }
-        ft.commitAllowingStateLoss();
+        ft.commit();
     }
 }

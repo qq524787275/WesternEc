@@ -3,9 +3,9 @@
     <item android:right="1dp">
         <shape>
             <solid android:color="#999999"/>
-            <corners android:radius="1dp"/>
-            <stroke android:color="#111111"    android:width="1px"/>
-            <size android:width="2dp"/>
+            <corners android:radius="3dp"/>
+            <stroke android:color="#111111"    android:width="2px"/>
+            <size android:width="4dp"/>
         </shape>
     </item>
 </layer-list>

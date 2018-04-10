@@ -91,4 +91,15 @@
         <item name="android:maxHeight">48dip</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/default_animation_up</item>
+        <item name="android:windowBackground">@mipmap/img_transition_default</item>
+    </style>
+
+    <!--打开图片详情时有动画-->
+    <style name="default_animation_up" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_up_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_up_out</item>
+    </style>
 </resources>

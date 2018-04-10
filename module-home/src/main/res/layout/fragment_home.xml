@@ -17,26 +17,28 @@
             android:id="@+id/smartrefreshlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srlHeaderHeight="180px"
-            app:srlReboundDuration="1000">
-
-            <com.wethis.module_base.widget.classics.CustomHeader
+            app:srlPrimaryColor="@color/qmui_config_color_blue"
+            app:srlAccentColor="@android:color/white"
+            app:srlEnableLoadMore="false"
+            >
+            <com.scwang.smartrefresh.header.TaurusHeader
                 android:layout_width="match_parent"
-                android:layout_height="180px"
-                app:srlDrawableArrowSize="50px"
-                app:srlDrawableSize="70px"
-                app:srlEnableLastTime="false"
-                app:srlTextSizeTitle="60px"></com.wethis.module_base.widget.classics.CustomHeader>
-
+                android:layout_height="match_parent"/>
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarSize="3dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbarThumbVertical="@drawable/recycler_scrollbar"
+                android:scrollbars="vertical">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/home_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:descendantFocusability="blocksDescendants"
-                android:scrollbarSize="3dp"
-                android:scrollbarStyle="outsideOverlay"
-                android:scrollbarThumbVertical="@drawable/recycler_scrollbar"
-                android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+                android:nestedScrollingEnabled="false"
+               ></android.support.v7.widget.RecyclerView>
+            </android.support.v4.widget.NestedScrollView>
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
     </com.kennyc.view.MultiStateView>
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.wethis.module_base.base.BaseBackFragment;
 import com.wethis.module_base.base.BaseFragment;
 import com.wethis.module_base.widget.bottom.BottomBar;
 import com.wethis.module_base.widget.bottom.BottomBarTab;
@@ -20,7 +21,7 @@ import butterknife.BindView;
  * 作者: Zzc on 2018-04-03.
  * 版本: v1.0
  */
-public class MainFragment extends BaseFragment {
+public class MainFragment extends BaseBackFragment {
     public static final int HOME = 0;
     public static final int SHOPCLASS = 1;
     public static final int SHOPCAR = 2;

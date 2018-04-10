@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <item name="delegate_containe" type="id"/>
-    <item name="selected_view" type="id"/>
+    <item name="delegate_containe" type="id" />
+    <item name="selected_view" type="id" />
 
+    <!--banner-->
+    <item name="bannerContainer" type="id" />
+    <item name="bannerViewPager" type="id" />
+    <item name="circleIndicator" type="id" />
+    <item name="numIndicator" type="id" />
+    <item name="titleView" type="id" />
+    <item name="bannerTitle" type="id" />
+    <item name="numIndicatorInside" type="id" />
+    <item name="indicatorInside" type="id" />
+    <item name="bannerDefaultImage" type="id" />
+
+    <!--autolayout-->
+    <item name="id_tag_autolayout_size" type="id"></item>
+    <item name="id_tag_autolayout_padding" type="id"></item>
+    <item name="id_tag_autolayout_margin" type="id"></item>
 </resources>

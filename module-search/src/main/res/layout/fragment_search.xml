@@ -1,10 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_all"
+    android:orientation="vertical">
+
+    <com.wethis.module_base.widget.view.SearchBar
+        android:id="@+id/searchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"></com.wethis.module_base.widget.view.SearchBar>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="搜索"
-        android:gravity="center"/>
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="0.3dp"
+        android:background="@color/list_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="30px"
+            android:text="热门搜索"
+            android:textColor="@color/black_222"
+            android:textSize="26px" />
+
+        <com.qmuiteam.qmui.widget.QMUIFloatLayout
+            android:id="@+id/search_fl_hot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            android:layout_marginLeft="80px"
+            android:layout_marginRight="80px"
+            app:qmui_childHorizontalSpacing="20px"
+            app:qmui_childVerticalSpacing="20px"></com.qmuiteam.qmui.widget.QMUIFloatLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="30px"
+            android:text="历史搜索"
+            android:textColor="@color/black_222"
+            android:textSize="26px" />
+
+        <com.qmuiteam.qmui.widget.QMUIFloatLayout
+            android:id="@+id/search_fl_hostory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            android:layout_marginRight="80px"
+            android:layout_marginLeft="80px"
+            app:qmui_childHorizontalSpacing="20px"
+            app:qmui_childVerticalSpacing="20px"></com.qmuiteam.qmui.widget.QMUIFloatLayout>
+    </LinearLayout>
+
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:id="@+id/login_go"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="50px"
+        android:gravity="center"
+        android:text="清空历史记录"
+        android:textColor="@color/grey_666"
+        android:textSize="26px"
+        app:qmui_backgroundColor="@color/bg_all"
+        app:qmui_borderColor="@color/grey_666"
+        app:qmui_borderWidth="1px"
+        app:qmui_isRadiusAdjustBounds="false"
+        app:qmui_radius="10px" />
+</LinearLayout>

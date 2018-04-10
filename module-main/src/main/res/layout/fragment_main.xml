@@ -8,19 +8,19 @@
     <com.wethis.module_base.widget.bottom.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="120px"
+        android:layout_height="110px"
         android:layout_gravity="bottom" />
 
     <FrameLayout
         android:id="@+id/delegate_containe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="120px" />
+        android:layout_marginBottom="110px" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="120px"
+        android:layout_marginBottom="110px"
         android:background="@drawable/actionbar_shadow_up" />
 </FrameLayout>
