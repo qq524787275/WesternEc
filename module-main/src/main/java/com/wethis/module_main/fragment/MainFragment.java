@@ -96,6 +96,7 @@ public class MainFragment extends BaseBackFragment {
             @Override
             public void onTabReselected(int position) {
 
+
             }
         });
     }
