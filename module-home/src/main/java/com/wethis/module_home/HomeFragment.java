@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.kennyc.view.MultiStateView;
 import com.lzy.okgo.OkGo;
@@ -16,7 +16,6 @@ import com.lzy.okgo.model.Response;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.wethis.module_base.App;
 import com.wethis.module_base.Constants;
 import com.wethis.module_base.base.BaseFragment;
 import com.wethis.module_base.callback.BaseResponse;
@@ -46,17 +45,21 @@ public class HomeFragment extends BaseFragment {
     FloatingActionButton mFab;
     @BindView(R2.id.home_stateview)
     MultiStateView mStateView;
+    @BindView(R2.id.home_ns)
+    NestedScrollView mNestedView;
     private HomeAdapter adapter;
     private SpinKitDialog mLoadingDialg;
     private LinearLayoutManager linearLayoutManager;
+
     public static HomeFragment newInstance() {
-        
+
         Bundle args = new Bundle();
-        
+
         HomeFragment fragment = new HomeFragment();
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     public Object setLayout() {
         return R.layout.fragment_home;
@@ -65,31 +68,33 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         mLoadingDialg = new SpinKitDialog.Builder(_mActivity)
-                .setColor(ContextCompat.getColor(_mActivity,R.color.red_ff5354))
+                .setColor(ContextCompat.getColor(_mActivity, R.color.red_ff5354))
                 .setStyle(Style.CUBE_GRID)
-                .setTextColor(ContextCompat.getColor(_mActivity,R.color.red_ff5354))
+                .setTextColor(ContextCompat.getColor(_mActivity, R.color.red_ff5354))
                 .builder();
     }
 
     @Override
     protected void initEvent() {
         super.initEvent();
-        homeRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        mNestedView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                if (dy > 5) {
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+
+                if (scrollY - oldScrollY > 5) {
                     mFab.hide();
-                } else if (dy < -5) {
+                } else if (scrollY - oldScrollY < -5) {
                     mFab.show();
                 }
             }
         });
 
+
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linearLayoutManager.scrollToPositionWithOffset(0, 0);
+                mNestedView.scrollTo(0,0);
+//                mNestedView.scrollToPositionWithOffset(0, 0);
             }
         });
 
@@ -152,8 +157,8 @@ public class HomeFragment extends BaseFragment {
                 });
     }
 
-    public void setThemeColor(int colorPrimary){
-        if(smartRefreshLayout!=null)
-        smartRefreshLayout.setPrimaryColors(colorPrimary, ContextCompat.getColor(_mActivity,R.color.white));
+    public void setThemeColor(int colorPrimary) {
+        if (smartRefreshLayout != null)
+            smartRefreshLayout.setPrimaryColors(colorPrimary, ContextCompat.getColor(_mActivity, R.color.white));
     }
 }

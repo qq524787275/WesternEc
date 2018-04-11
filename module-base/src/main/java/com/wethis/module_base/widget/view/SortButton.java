@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.wethis.module_base.R;
 
+import java.util.LinkedHashMap;
+
 /**
  * 作者: Zzc on 2018-04-10.
  * 版本: v1.0
@@ -43,6 +45,7 @@ public class SortButton extends LinearLayout {
         String text=typedArray.getString(R.styleable.ShopSortButton_text);
         typedArray.recycle();
         mText.setText(text);
+        LinkedHashMap linkedHashMap;
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

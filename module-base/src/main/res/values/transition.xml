@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="transition_shopdetail_banner">transition_shopdetail_banner</string>
+    <string name="transition_shopdetail_promotion_price">transition_shopdetail_promotion_price</string>
+    <string name="transition_shopdetail_goods_name">transition_shopdetail_goods_name</string>
+</resources>

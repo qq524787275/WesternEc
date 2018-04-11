@@ -10,7 +10,7 @@ public class Constants {
     public static final String URL_TEST_WEXIN="http://wxpay.wxutil.com/pub_v2/app/app_pay.php";
 
     //域名host http://www.minjianle.com http://www.winthis.cn
-    public static final String BASE_URL="http://www.minjianle.com";
+    public static final String BASE_URL="http://www.winthis.cn";
 
     //用户注册
     public static final String URL_REGISTER=BASE_URL+"/api/user/register";

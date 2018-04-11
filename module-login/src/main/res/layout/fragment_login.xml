@@ -14,7 +14,7 @@
         android:id="@+id/img"
         android:layout_width="180px"
         android:layout_height="180px"
-        android:src="@mipmap/ic_launcher"
+        android:src="@mipmap/ic_pikachu"
         android:transitionName="share"
        />
 </LinearLayout>

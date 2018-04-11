@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300px"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/shopdetail_goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35px"
+        android:lines="2"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:transitionName="@string/transition_shopdetail_goods_name"
+        android:layout_marginTop="20px"
+        android:layout_marginBottom="5px"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/shopdetail_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:textSize="26px"
+        android:textColor="@color/grey_666"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px">
+        <TextView
+            android:id="@+id/shopdetail_promotion_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_ff5354"
+            android:textSize="35px"
+            android:transitionName="@string/transition_shopdetail_promotion_price"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/shopdetail_sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26px"
+            android:textColor="@color/grey_666"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/list_line"/>
+</LinearLayout>

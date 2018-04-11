@@ -25,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
             <android.support.v4.widget.NestedScrollView
+                android:id="@+id/home_ns"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbarSize="3dp"
@@ -50,7 +51,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="24dp"
         android:layout_marginRight="24dp"
-        android:src="@mipmap/home_totop"
+        android:src="@mipmap/ic_pikachu"
         app:backgroundTint="@color/white"
         app:fabSize="mini" />
 </RelativeLayout>

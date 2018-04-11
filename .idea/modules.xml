@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/module-search/module-search.iml" filepath="$PROJECT_DIR$/module-search/module-search.iml" />
       <module fileurl="file://$PROJECT_DIR$/module-shopcar/module-shopcar.iml" filepath="$PROJECT_DIR$/module-shopcar/module-shopcar.iml" />
       <module fileurl="file://$PROJECT_DIR$/module-shopclass/module-shopclass.iml" filepath="$PROJECT_DIR$/module-shopclass/module-shopclass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-shopdetail/module-shopdetail.iml" filepath="$PROJECT_DIR$/module-shopdetail/module-shopdetail.iml" />
       <module fileurl="file://$PROJECT_DIR$/module-splash/module-splash.iml" filepath="$PROJECT_DIR$/module-splash/module-splash.iml" />
     </modules>
   </component>

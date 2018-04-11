@@ -84,7 +84,8 @@ public class MainFragment extends BaseBackFragment {
         mBottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, int prePosition) {
-                showHideAnimaFragment(mBaseFragments[position], mBaseFragments[prePosition], getFragmentManager());
+//                showHideAnimaFragment(mBaseFragments[position], mBaseFragments[prePosition], getFragmentManager());
+                showHideFragment(mBaseFragments[position], mBaseFragments[prePosition]);
             }
 
             @Override

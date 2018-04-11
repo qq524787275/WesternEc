@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wethis.module_base.widget.banner.Banner xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shopdetail_banner"
+    android:layout_width="match_parent"
+    android:layout_height="750px"
+    android:transitionName="@string/transition_shopdetail_banner">
+
+</com.wethis.module_base.widget.banner.Banner>

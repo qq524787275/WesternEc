@@ -1,6 +1,8 @@
 package com.wethis.module_home.adapter;
 
 import android.graphics.Bitmap;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v4.view.ViewPager;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.GridLayoutManager;
@@ -8,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -20,6 +23,7 @@ import com.wethis.module_base.App;
 import com.wethis.module_base.Constants;
 import com.wethis.module_base.GlideImageLoader;
 import com.wethis.module_base.utils.BitmapUtils;
+import com.wethis.module_base.utils.CommonUtils;
 import com.wethis.module_base.widget.banner.Banner;
 import com.wethis.module_base.widget.banner.BannerConfig;
 import com.wethis.module_home.HomeFragment;
@@ -107,18 +111,27 @@ public class HomeAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, Base
             case IndexBean.SHOPLIST:
                 IndexBean.BlockListBean blockListBean = (IndexBean.BlockListBean) item;
                 helper.setText(R.id.multi_item_shoplist_title, blockListBean.getCategory_name());
-
                 RecyclerView shoplist = helper.getView(R.id.multi_item_shoplist_rv);
                 shoplist.setLayoutManager(new GridLayoutManager(mContext, 2));
                 final GoodsListAdapter goodsAdapter = new GoodsListAdapter();
-
                 if (blockListBean.getGoods_list() != null)
                     goodsAdapter.addData(blockListBean.getGoods_list());
-
                 goodsAdapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+                        Pair<View, String> pair_image = Pair.create(view.findViewById(R.id.item_shop_list_image), CommonUtils.getString(R.string.transition_shopdetail_banner));
+                        Pair<View, String> pair_title = Pair.create(view.findViewById(R.id.item_shop_list_title), CommonUtils.getString(R.string.transition_shopdetail_goods_name));
+                        Pair<View, String> pair_price = Pair.create(view.findViewById(R.id.item_shop_list_price), CommonUtils.getString(R.string.transition_shopdetail_promotion_price));
+                        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
+                                .makeSceneTransitionAnimation(homeFragment.getActivity(), pair_image, pair_title, pair_price);
+                        IndexBean.BlockListBean.GoodsListBean goodsListBean = goodsAdapter.getData().get(position);
+                        ARouter.getInstance()
+                                .build("/shopdetail/index")
+                                .withOptionsCompat(optionsCompat)
+                                .withInt("goods_id", goodsListBean.getGoods_id())
+                                .withString("goods_name",goodsListBean.getGoods_name())
+                                .withString("promotion_price",goodsListBean.getPromotion_price())
+                                .navigation(homeFragment.getActivity());
                     }
                 });
                 helper.getView(R.id.multi_item_shoplist_title_layout).setOnClickListener(new View.OnClickListener() {

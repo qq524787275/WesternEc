@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wethis.module_base.base.BaseFragment;
+
+import dalvik.system.DexClassLoader;
+import dalvik.system.PathClassLoader;
 
 /**
  * 作者: Zzc on 2018-04-03.
@@ -27,6 +29,5 @@ public class ShopCarFragment extends BaseFragment {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-
     }
 }
