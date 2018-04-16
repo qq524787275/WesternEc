@@ -4,10 +4,10 @@ before_install:
 android:
   components:
     - build-tools-26.0.2
-    - android-26
+    - android-27
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - addon-google_apis-google-26
-    - sys-img-armeabi-v7a-android-26
-    - sys-img-x86-android-26
+    - addon-google_apis-google-27
+    - sys-img-armeabi-v7a-android-27
+    - sys-img-x86-android-27
