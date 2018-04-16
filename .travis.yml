@@ -11,5 +11,4 @@ android:
     - addon-google_apis-google-27
     - sys-img-armeabi-v7a-android-27
     - sys-img-x86-android-27
-
 script: ./gradlew clean check test
